@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+</head>
+<body>
+<h1 id="trigger">出发</h1>
+</body>
+<script>
+    $("#trigger").click(function(){
+        $.ajax({
+            xhrFields: {
+                withCredentials: true // 设置运行跨域操作
+            },
+            url:"https://pps-poc-elb-547430242.us-west-2.elb.amazonaws.com/clc-cache/api/v1/assets/clc?component=true&omitHeader=true&start=0&rows=10",
+                headers: {
+                    Authorization: "Bearer eyJraWQiOiI2VURZM0JpS2ZQU0hQd1ZWX2RiRFY1SnRkS1lGalUxSWROVVlNTFdlcXdJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlZKem5PQ1BXdHU4Zmd5VE1TU0s3MEpXQy1EblRXNGUwdWIzWG94eXZPVjAiLCJpc3MiOiJodHRwczovL2Rldi02MTcwMTgub2t0YXByZXZpZXcuY29tL29hdXRoMi9kZWZhdWx0IiwiYXVkIjoiYXBpOi8vZGVmYXVsdCIsImlhdCI6MTU3MzEzNDc3MywiZXhwIjoxNTczMjIxMTczLCJjaWQiOiIwb2FvNmc2d283RzBQYTdFdzBoNyIsInVpZCI6IjAwdWpjZmozNTFvVTRLaFBHMGg3Iiwic2NwIjpbInByb2ZpbGUiLCJlbWFpbCIsIm9wZW5pZCJdLCJzdWIiOiJzYW5kZWVwLWxvY2FsIiwiQ0xDLUFkbWluIjp0cnVlfQ.PCXwBRDxupO6azgztvRDdLJukLQRTkq-tWMthW8-HM9i6JyRAX-iKPKsA494yxq7w4gZa06hKDQ7hbsz9KU9-3mXyv9xpt08VV_42G9Jzo5XgB8yI7-Z2uyYt-8QEHixZvO3cZoPTXK6Wf58bHPcHTR8fN_IdBqDlEKOl1FB8RKUyVWSyRw9-JV13OvC4rfFa6KD379e7legOce9ejw78n1r32D1YzQ27WAYBKDuYXRKk9jkLqvNDBc6HGXcZthgmI15V7SV38B6-V3h3GMk9l2Z42gYq_AJvDNkzoXoMsnEX_bdFPzK80MqJFEe0jvNbjoNRz8SD2Ylota2OJnZyA",
+                    Accept: "application/json; charset=utf-8"
+                 },
+                success:function(result){
+                console.log(result)
+            }});
+    });
+</script>
+</html>
